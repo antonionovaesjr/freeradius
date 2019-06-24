@@ -18,7 +18,7 @@ services:
   freeradius-db:
     image: antonionovaesjr/freeradius-db:v0.9
     volumes:
-     - /tmp/postgresql:/var/lib/postgresql/data/pgdata/
+     - /tmp/postgresql:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=mysecretpassword
       - PGDATA=/var/lib/postgresql/data/pgdata/
