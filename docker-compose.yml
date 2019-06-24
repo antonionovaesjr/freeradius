@@ -1,7 +1,7 @@
 version: '2'
 services:
   freeradius:
-    image: antonionovaesjr/freeradius:v0.3
+    image: antonionovaesjr/freeradius:v0.4
     depends_on:
      - freeradius-db
     ports:
