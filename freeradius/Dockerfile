@@ -12,8 +12,8 @@ ADD docker-entrypoint.sh /docker-entrypoint.sh
 ENV DB_HOST localhost
 ENV DB_USER radius
 ENV DB_PASS radius
-Env DB_NAME radius
-Env DB_PORT 5432
+ENV DB_NAME radius
+ENV DB_PORT 5432
 EXPOSE 1812/udp
 EXPOSE 1813/udp
 VOLUME /etc/raddb/
