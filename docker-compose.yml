@@ -16,7 +16,7 @@ services:
      - DB_NAME=radius
      - DB_PORT=5432
   freeradius-db:
-    image: antonionovaesjr/freeradius-db:v0.9
+    image: antonionovaesjr/freeradius-db:v1.1
     volumes:
      - /tmp/postgresql:/var/lib/postgresql/data
     environment:
