@@ -1,0 +1,27 @@
+version: '2'
+services:
+  freeradius:
+    image: antonionovaesjr/freeradius:v0.3
+    depends_on:
+     - freeradius-db
+    ports:
+     - "1812:1812/udp"
+     - "1813:1813/udp"
+    volumes:
+     - /tmp/radius:/etc/raddb
+    environment:
+     - DB_HOST=freeradius-db
+     - DB_USER=radius
+     - DB_PASS=radius123
+     - DB_NAME=radius
+     - DB_PORT=5432
+  freeradius-db:
+    image: antonionovaesjr/freeradius-db:v0.9
+    volumes:
+     - /tmp/postgresql:/var/lib/postgresql/data/pgdata/
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+      - PGDATA=/var/lib/postgresql/data/pgdata/
+      - DB_RADIUS_NAME=radius
+      - DB_RADIUS_USER=radius
+      - DB_RADIUS_PASS=radius123
